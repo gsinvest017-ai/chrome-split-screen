@@ -31,20 +31,10 @@ body {
   letter-spacing: 1px;
 }
 
-.badge {
+.version {
   font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #00ffaa;
-  border: 1px solid #00ffaa44;
-  border-radius: 3px;
-  padding: 2px 6px;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.5; }
+  color: #303050;
+  letter-spacing: 1px;
 }
 
 /* ── Section label ──────────────────────────────── */

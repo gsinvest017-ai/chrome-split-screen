@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <title>TmuxTab</title>
+  <link rel="stylesheet" href="split.css">
+</head>
+<body>
+
+  <!-- ── Toolbar ─────────────────────────────────────────────────── -->
+  <div id="toolbar">
+
+    <span class="logo">⬜</span>
+
+    <div id="url-bars">
+      <!-- Populated by split.js -->
+    </div>
+
+    <div class="tb-actions">
+      <button class="tb-btn" id="btn-layout" title="Change layout (⊞)">⊞</button>
+      <button class="tb-btn danger" id="btn-unsplit" title="Unsplit (Ctrl+Shift+U)">✕</button>
+    </div>
+
+  </div>
+
+  <!-- ── Layout picker overlay ────────────────────────────────────── -->
+  <div id="layout-panel" class="hidden">
+    <div class="lp-grid">
+      <button class="lp-btn" data-layout="h2">
+        <div class="lp-prev h2"></div><span>L | R</span>
+      </button>
+      <button class="lp-btn" data-layout="v2">
+        <div class="lp-prev v2"></div><span>T / B</span>
+      </button>
+      <button class="lp-btn" data-layout="quad">
+        <div class="lp-prev quad"></div><span>Quad</span>
+      </button>
+      <button class="lp-btn" data-layout="h3">
+        <div class="lp-prev h3"></div><span>3 Col</span>
+      </button>
+      <button class="lp-btn" data-layout="main-right">
+        <div class="lp-prev main-right"></div><span>Main+R</span>
+      </button>
+      <button class="lp-btn" data-layout="main-bottom">
+        <div class="lp-prev main-bottom"></div><span>Main+B</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Split grid ───────────────────────────────────────────────── -->
+  <div id="split-grid">
+    <!-- Populated by split.js -->
+  </div>
+
+  <script src="split.js"></script>
+</body>
+</html>

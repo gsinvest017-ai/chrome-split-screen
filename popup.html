@@ -12,10 +12,9 @@
       <span class="logo-icon">⬜</span>
       <span class="logo-text">TmuxTab</span>
     </div>
-    <span id="session-badge" class="badge hidden">● SPLIT</span>
+    <span class="version">v2 in-tab</span>
   </div>
 
-  <!-- Layout picker -->
   <div class="section-label">LAYOUT</div>
   <div class="layouts">
 
@@ -51,30 +50,11 @@
 
   </div>
 
-  <!-- Ratio slider — only shown for 2-pane sessions -->
-  <div id="ratio-section" class="hidden">
-    <div class="section-label">RATIO</div>
-    <div class="ratio-row">
-      <span class="ratio-label" id="ratio-a">50</span>
-      <input type="range" id="ratio-slider" min="20" max="80" value="50" step="5">
-      <span class="ratio-label" id="ratio-b">50</span>
-    </div>
-    <div class="ratio-presets">
-      <button class="ratio-btn" data-ratio="0.3">30/70</button>
-      <button class="ratio-btn" data-ratio="0.4">40/60</button>
-      <button class="ratio-btn" data-ratio="0.5">50/50</button>
-      <button class="ratio-btn" data-ratio="0.6">60/40</button>
-      <button class="ratio-btn" data-ratio="0.7">70/30</button>
-    </div>
-  </div>
-
-  <!-- Actions -->
   <div class="section-label">ACTIONS</div>
   <button class="action-btn danger" id="unsplit-btn">
-    ✕  Unsplit &amp; Maximize  <kbd>Ctrl+Shift+U</kbd>
+    ✕  Unsplit &amp; Restore  <kbd>Ctrl+Shift+U</kbd>
   </button>
 
-  <!-- Hotkeys reference -->
   <div class="section-label">HOTKEYS</div>
   <div class="hotkeys">
     <div class="hk"><kbd>Ctrl+Shift+H</kbd><span>Split ←|→</span></div>
