@@ -1,0 +1,227 @@
+/* TmuxTab popup — dark navy + cyan accent, monospace */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 288px;
+  background: #12121e;
+  color: #d0d0e0;
+  font-family: 'JetBrains Mono', 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+  font-size: 11px;
+  padding: 12px;
+  user-select: none;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #1e2040;
+}
+
+.logo { display: flex; align-items: center; gap: 7px; }
+.logo-icon { font-size: 15px; }
+.logo-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #00d4ff;
+  letter-spacing: 1px;
+}
+
+.badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #00ffaa;
+  border: 1px solid #00ffaa44;
+  border-radius: 3px;
+  padding: 2px 6px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+/* ── Section label ──────────────────────────────── */
+.section-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #3a6a8a;
+  margin: 10px 0 6px;
+  text-transform: uppercase;
+}
+
+/* ── Layout grid ────────────────────────────────── */
+.layouts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.layout-btn {
+  background: #181830;
+  border: 1px solid #252545;
+  border-radius: 5px;
+  padding: 7px 4px 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #7070a0;
+  font-family: inherit;
+  font-size: 10px;
+  transition: border-color .12s, background .12s, color .12s;
+}
+.layout-btn:hover  { border-color: #00d4ff; color: #e0e0ff; background: #1a2040; }
+.layout-btn:active { background: #0e1a30; }
+
+/* Layout preview thumbnails */
+.preview {
+  width: 44px;
+  height: 28px;
+  border: 1px solid #303058;
+  border-radius: 2px;
+  background: #0c0c1a;
+  position: relative;
+  overflow: hidden;
+}
+
+.preview::before,
+.preview::after {
+  content: '';
+  position: absolute;
+  background: #00d4ff;
+}
+
+/* h2: single vertical divider */
+.preview.h2::after  { left: 50%; top: 0; bottom: 0; width: 1px; }
+
+/* v2: single horizontal divider */
+.preview.v2::after  { top: 50%; left: 0; right: 0; height: 1px; }
+
+/* quad: cross */
+.preview.quad::before { left: 50%; top: 0; bottom: 0; width: 1px; }
+.preview.quad::after  { top: 50%; left: 0; right: 0; height: 1px; }
+
+/* h3: two vertical dividers */
+.preview.h3::before { left: calc(100%/3); top: 0; bottom: 0; width: 1px; }
+.preview.h3::after  { left: calc(200%/3); top: 0; bottom: 0; width: 1px; }
+
+/* main-right: 65/35 */
+.preview.main-right::after { left: 65%; top: 0; bottom: 0; width: 1px; }
+
+/* main-bottom: 65/35 */
+.preview.main-bottom::after { top: 65%; left: 0; right: 0; height: 1px; }
+
+/* ── Ratio section ──────────────────────────────── */
+.ratio-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.ratio-label {
+  width: 22px;
+  text-align: center;
+  color: #00d4ff;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+input[type=range] {
+  flex: 1;
+  -webkit-appearance: none;
+  height: 3px;
+  background: #252545;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00d4ff;
+  cursor: pointer;
+}
+
+.ratio-presets {
+  display: flex;
+  gap: 4px;
+}
+
+.ratio-btn {
+  flex: 1;
+  background: #181830;
+  border: 1px solid #252545;
+  border-radius: 3px;
+  padding: 3px 0;
+  cursor: pointer;
+  color: #6060a0;
+  font-family: inherit;
+  font-size: 9px;
+  transition: border-color .12s, color .12s;
+}
+.ratio-btn:hover  { border-color: #00d4ff; color: #00d4ff; }
+.ratio-btn:active { background: #0e1a30; }
+
+/* ── Action button ──────────────────────────────── */
+.action-btn {
+  width: 100%;
+  background: #181830;
+  border: 1px solid #252545;
+  border-radius: 5px;
+  padding: 7px 10px;
+  cursor: pointer;
+  color: #7070a0;
+  font-family: inherit;
+  font-size: 11px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  transition: border-color .12s, color .12s, background .12s;
+}
+.action-btn.danger:hover { border-color: #ff4455; color: #ff4455; background: #1e1018; }
+
+/* ── Hotkeys reference ──────────────────────────── */
+.hotkeys { display: flex; flex-direction: column; gap: 4px; }
+.hk {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 0;
+}
+.hk span { color: #505070; font-size: 10px; }
+
+kbd {
+  background: #0c0c1a;
+  border: 1px solid #303060;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-family: inherit;
+  font-size: 9.5px;
+  color: #00d4ff;
+}
+
+/* ── Footer ─────────────────────────────────────── */
+.footer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #181828;
+  text-align: center;
+}
+.footer a { color: #354060; text-decoration: none; font-size: 10px; transition: color .12s; }
+.footer a:hover { color: #00d4ff; }
+
+/* ── Utility ────────────────────────────────────── */
+.hidden { display: none !important; }

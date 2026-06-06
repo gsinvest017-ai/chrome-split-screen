@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <title>TmuxTab</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">
+      <span class="logo-icon">⬜</span>
+      <span class="logo-text">TmuxTab</span>
+    </div>
+    <span id="session-badge" class="badge hidden">● SPLIT</span>
+  </div>
+
+  <!-- Layout picker -->
+  <div class="section-label">LAYOUT</div>
+  <div class="layouts">
+
+    <button class="layout-btn" data-layout="h2" title="Side by side  Ctrl+Shift+H">
+      <div class="preview h2"></div>
+      <span>L | R</span>
+    </button>
+
+    <button class="layout-btn" data-layout="v2" title="Top / Bottom  Ctrl+Shift+V">
+      <div class="preview v2"></div>
+      <span>T / B</span>
+    </button>
+
+    <button class="layout-btn" data-layout="quad" title="4 Quadrants  Ctrl+Shift+4">
+      <div class="preview quad"></div>
+      <span>Quad</span>
+    </button>
+
+    <button class="layout-btn" data-layout="h3" title="3 Columns">
+      <div class="preview h3"></div>
+      <span>3 Col</span>
+    </button>
+
+    <button class="layout-btn" data-layout="main-right" title="Main + Sidebar Right">
+      <div class="preview main-right"></div>
+      <span>Main+R</span>
+    </button>
+
+    <button class="layout-btn" data-layout="main-bottom" title="Main + Bottom Panel">
+      <div class="preview main-bottom"></div>
+      <span>Main+B</span>
+    </button>
+
+  </div>
+
+  <!-- Ratio slider — only shown for 2-pane sessions -->
+  <div id="ratio-section" class="hidden">
+    <div class="section-label">RATIO</div>
+    <div class="ratio-row">
+      <span class="ratio-label" id="ratio-a">50</span>
+      <input type="range" id="ratio-slider" min="20" max="80" value="50" step="5">
+      <span class="ratio-label" id="ratio-b">50</span>
+    </div>
+    <div class="ratio-presets">
+      <button class="ratio-btn" data-ratio="0.3">30/70</button>
+      <button class="ratio-btn" data-ratio="0.4">40/60</button>
+      <button class="ratio-btn" data-ratio="0.5">50/50</button>
+      <button class="ratio-btn" data-ratio="0.6">60/40</button>
+      <button class="ratio-btn" data-ratio="0.7">70/30</button>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="section-label">ACTIONS</div>
+  <button class="action-btn danger" id="unsplit-btn">
+    ✕  Unsplit &amp; Maximize  <kbd>Ctrl+Shift+U</kbd>
+  </button>
+
+  <!-- Hotkeys reference -->
+  <div class="section-label">HOTKEYS</div>
+  <div class="hotkeys">
+    <div class="hk"><kbd>Ctrl+Shift+H</kbd><span>Split ←|→</span></div>
+    <div class="hk"><kbd>Ctrl+Shift+V</kbd><span>Split ↑/↓</span></div>
+    <div class="hk"><kbd>Ctrl+Shift+4</kbd><span>4 Quadrants</span></div>
+    <div class="hk"><kbd>Ctrl+Shift+U</kbd><span>Unsplit</span></div>
+  </div>
+
+  <div class="footer">
+    <a id="shortcut-link" href="#">Customize shortcuts →</a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
