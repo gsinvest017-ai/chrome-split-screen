@@ -2,28 +2,22 @@
 <html lang="zh-TW">
 <head>
   <meta charset="utf-8">
-  <title>TmuxTab</title>
+  <title>Kmux</title>
   <link rel="stylesheet" href="split.css">
 </head>
 <body>
 
-  <!-- ── Toolbar ─────────────────────────────────────────────────── -->
+  <!-- ── Toolbar (logo + actions only; URL bars live inside each pane) ── -->
   <div id="toolbar">
-
-    <span class="logo">⬜</span>
-
-    <div id="url-bars">
-      <!-- Populated by split.js -->
-    </div>
-
+    <span class="logo-k">K</span><span class="logo-rest">mux</span>
+    <div class="tb-spacer"></div>
     <div class="tb-actions">
-      <button class="tb-btn" id="btn-layout" title="Change layout (⊞)">⊞</button>
-      <button class="tb-btn danger" id="btn-unsplit" title="Unsplit (Ctrl+Shift+U)">✕</button>
+      <button class="tb-btn" id="btn-layout" title="Change layout">⊞</button>
+      <button class="tb-btn danger" id="btn-unsplit" title="Unsplit  Ctrl+Shift+U">✕</button>
     </div>
-
   </div>
 
-  <!-- ── Layout picker overlay ────────────────────────────────────── -->
+  <!-- ── Layout picker overlay ─────────────────────────────────────────── -->
   <div id="layout-panel" class="hidden">
     <div class="lp-grid">
       <button class="lp-btn" data-layout="h2">
@@ -47,10 +41,8 @@
     </div>
   </div>
 
-  <!-- ── Split grid ───────────────────────────────────────────────── -->
-  <div id="split-grid">
-    <!-- Populated by split.js -->
-  </div>
+  <!-- ── Split grid (panes with per-pane URL bars injected by split.js) ─ -->
+  <div id="split-grid"></div>
 
   <script src="split.js"></script>
 </body>
