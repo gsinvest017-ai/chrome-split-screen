@@ -16,7 +16,19 @@
 
 ## 進度日誌
 
-<!-- 各 milestone 完成後追加 -->
+### M1 — Scaffolding（commit 50a5d05）
+- manifest.json（MV3，4 個 commands），generate_icons.ps1，icons/16/48/128.png，docs/progress
+
+### M2 — Background core（commit e9c35f4）
+- background.js：applyLayout / adjustRatio / unsplit
+- 6 種 preset，chrome.storage.session 持久化，hotkey listener，window cleanup
+
+### M3 — Popup UI（commit 2335c51）
+- popup.html/css/js：layout picker（6 顆按鈕 + CSS thumbnail）
+- ratio slider + 5 presets，session badge，unsplit button
+
+### M4 — README + 收尾（此次）
+- README.md：安裝步驟、熱鍵表、layout ASCII 圖、技術說明
 
 ## Fallback 指引
 
