@@ -1,0 +1,10 @@
+# Claude Code metadata
+_metadata/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
