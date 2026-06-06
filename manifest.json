@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "TmuxTab — Split Screen",
+  "version": "1.0.0",
+  "description": "Split browser windows like tmux: hotkeys + UI to tile horizontal/vertical panes",
+  "permissions": [
+    "windows",
+    "tabs",
+    "storage",
+    "system.display"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "TmuxTab Split Screen"
+  },
+  "commands": {
+    "split-h": {
+      "suggested_key": { "default": "Ctrl+Shift+H" },
+      "description": "Split — side by side (L | R)"
+    },
+    "split-v": {
+      "suggested_key": { "default": "Ctrl+Shift+V" },
+      "description": "Split — top / bottom (T / B)"
+    },
+    "split-quad": {
+      "suggested_key": { "default": "Ctrl+Shift+4" },
+      "description": "Split — 4 quadrants"
+    },
+    "unsplit": {
+      "suggested_key": { "default": "Ctrl+Shift+U" },
+      "description": "Unsplit — maximize current window"
+    }
+  }
+}
