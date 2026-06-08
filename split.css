@@ -258,5 +258,92 @@ html, body {
 #split-grid.quad .drag-vb             { grid-column: 2; grid-row: 3; }
 #split-grid.quad .pane:nth-of-type(4) { grid-column: 3; grid-row: 3; }
 
+/* ── Per-pane label chip ─────────────────────────────────────────── */
+.label-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* [+] add button — always visible, very subtle */
+.label-add {
+  background: transparent;
+  border: 1px dashed #1c1c38;
+  border-radius: 3px;
+  color: #222240;
+  font-size: 11px;
+  font-family: inherit;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: border-color .15s, color .15s;
+}
+.label-add:hover {
+  border-color: #00d4ff55;
+  color: #0090b0;
+}
+
+/* [alias ×] chip */
+.label-chip {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: #101a28;
+  border: 1px solid #1e3a52;
+  border-radius: 3px;
+  padding: 1px 3px 1px 6px;
+  cursor: pointer;
+  max-width: 120px;
+  transition: border-color .12s;
+}
+.label-chip:hover { border-color: #00d4ff88; }
+
+.label-text {
+  font-size: 10px;
+  color: #50a0c8;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.label-del {
+  background: transparent;
+  border: none;
+  color: #2a4a6a;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0 1px;
+  line-height: 1;
+  font-family: inherit;
+  transition: color .12s;
+  flex-shrink: 0;
+}
+.label-del:hover { color: #ff5566; }
+
+/* Inline label editor */
+.label-edit {
+  background: #080f18;
+  border: 1px solid #00d4ff;
+  border-radius: 3px;
+  color: #70c8f0;
+  font-family: inherit;
+  font-size: 10px;
+  padding: 2px 6px;
+  outline: none;
+  width: 90px;
+  caret-color: #00d4ff;
+}
+.label-edit::placeholder { color: #142230; }
+
 /* ── Utility ─────────────────────────────────────────────────────── */
 .hidden { display: none !important; }

@@ -8,9 +8,10 @@ const PANE_COUNTS = {
   h2: 2, v2: 2, quad: 4, h3: 3, 'main-right': 2, 'main-bottom': 2,
 };
 
-function buildSplitUrl(layout, urls) {
+function buildSplitUrl(layout, urls, labels) {
   const p = new URLSearchParams({ l: layout });
   urls.forEach((u, i) => p.set('u' + i, u || ''));
+  if (labels) labels.forEach((a, i) => { if (a) p.set('a' + i, a); });
   return `${SPLIT_PAGE}?${p}`;
 }
 
@@ -29,14 +30,17 @@ async function getActiveTab() {
 async function applyLayout(layout, tab) {
   const count = PANE_COUNTS[layout] || 2;
 
-  // If already on a split page, reuse existing pane URLs
-  let existingUrls = [];
+  // If already on a split page, reuse existing pane URLs + labels
+  let existingUrls   = [];
+  let existingLabels = [];
   if (tab.url.startsWith(SPLIT_PAGE)) {
     const sp = new URLSearchParams(new URL(tab.url).search);
     for (let i = 0; sp.has('u' + i); i++) existingUrls.push(sp.get('u' + i));
+    for (let i = 0; i < existingUrls.length; i++) existingLabels.push(sp.get('a' + i) || '');
   }
 
-  const urls = [];
+  const urls   = [];
+  const labels = [];
   for (let i = 0; i < count; i++) {
     if (i < existingUrls.length) {
       urls.push(existingUrls[i]);
@@ -45,9 +49,10 @@ async function applyLayout(layout, tab) {
     } else {
       urls.push('');
     }
+    labels.push(existingLabels[i] || '');
   }
 
-  await chrome.tabs.update(tab.id, { url: buildSplitUrl(layout, urls) });
+  await chrome.tabs.update(tab.id, { url: buildSplitUrl(layout, urls, labels) });
 }
 
 async function unsplit(tab) {
