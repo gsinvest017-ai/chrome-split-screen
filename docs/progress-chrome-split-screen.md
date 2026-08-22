@@ -1,3 +1,10 @@
+---
+type: progress
+updated: 2026-06-06
+repos: [gs-backfill-chrome-split-screen]
+owner: User
+---
+
 # Chrome Split Screen Extension — Progress
 
 ## 目標
